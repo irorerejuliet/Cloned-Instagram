@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaRegComment } from "react-icons/fa6";
 import { TbLocationShare } from "react-icons/tb";
 import { BiSolidConversation } from "react-icons/bi";
+import { BsEmojiSmile } from "react-icons/bs";
 
 const FeedCard = () => {
   return (
@@ -33,7 +34,7 @@ const FeedCard = () => {
             <FaEllipsisH />
           </div>
           {/* feed img */}
-          <div className="w-full lg:max-h-[70vh] md:max-h-[70vh] sm:max-h-[565vh] max-h-[50vh] lg:h-[70vh] md:h-[60vh] sm:h-[50vh] lg:min-h-[65vh] md:min-h-[55vh] sm:min-h-[50vh] min-h-[45vh] border border-gray-300 rounded overflow-hidden mb-3">
+          <div className="w-full lg:max-h-[70vh] md:max-h-[70vh] sm:max-h-[65vh] max-h-[50vh] lg:h-[70vh] md:h-[60vh] sm:h-[50vh] lg:min-h-[65vh] md:min-h-[55vh] sm:min-h-[50vh] min-h-[45vh] border border-gray-300 rounded overflow-hidden mb-3">
             <img
               src={feed.postImg}
               alt={feed.caption}
@@ -44,7 +45,7 @@ const FeedCard = () => {
           <div className="w-full h-auto flex items-center justify-between">
             <div className="flex items-center gap-x-3">
               <CiHeart /> {/*likes */}
-              <FaRegComment />
+              <FaRegComment /> {/*comment*/}
               <TbLocationShare />
             </div>
             <BiSolidConversation />
@@ -71,12 +72,16 @@ const FeedCard = () => {
           {/* Captions sesstion */}
           <div className="w-full h-auto flex items-center gap-x-1">
             <div className="w-full h-auto text-sm text-gray-200 font-thin">
-              <Link to="/" className="text-white font-medium text-sm me-2">
-              {feed.username}
+              <Link to="/" className="text-white font-medium text-sm me-1">
+                {feed.username}
+              </Link>
+              {feed.caption}
+              <Link to="/" className="text-gray-400  text-sm me-1">
+                more
               </Link>
             </div>
           </div>
-          {/* Cooment count */}
+          {/* Comment count */}
           <div className="w-full h-auto flex items-center gap-x-1">
             <div className="w-full h-auto text-sm gray-200 font-thin">
               <Link to="/" className="text-gray-400 font-normal my-2">
@@ -84,7 +89,23 @@ const FeedCard = () => {
               </Link>
             </div>
           </div>
+          {/* caption with username */}
+          {/* <div className="w-full h-auto flex items-center gap-x-1">
+            <div className="w-full h-auto text-sm text-gray-200 font-thin">
+              <Link to="/" className="text-gray-400 font-normal my-2">
+                View all {FeedData.commentCount}
+              </Link>
+            </div>
+          </div> */}
           {/* comment */}
+          <div className="w-full h-auto flex items-center justify-between border-b border-b-gray-500">
+            <input
+              type="text"
+              className="w-[90%] h-auto bg-transparent border-none outline-none focus:outline-none text-sm text-gray-400 py-3"
+              placeholder="Add a comment...."
+            />
+            <BsEmojiSmile />
+          </div>
         </div>
       ))}
     </>

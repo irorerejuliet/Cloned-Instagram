@@ -2,6 +2,7 @@ import React from 'react'
 import TopNav from '../../Components/Header/TopNav/TopNav'
 import Stories from '../Stories/Stories'
 import FeedCard from './FeedCard'
+import RecommendedUser from '../RecommmededUser/RecommendedUser'
 
 const Feed = () => {
   return (
@@ -23,6 +24,7 @@ const Feed = () => {
       {/* Recommended user section */}
       <div className='w-[25px] h-auto lg:block md:hidden sm:hidden hidden'>
         {/*  */}
+        <RecommendedUser/>
       </div>
     </div>
   )
